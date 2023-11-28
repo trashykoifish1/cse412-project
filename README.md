@@ -1,1 +1,1 @@
-# cse412-project
+# Student Management Web App
