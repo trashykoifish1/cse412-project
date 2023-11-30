@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash
 import psycopg2
 
 DATABASE_NAME = "cse412-project"
@@ -9,6 +9,7 @@ PORT = "5432"
 students = []
 
 app = Flask(__name__)
+app.secret_key = 'cse412-project'
 
 conn = psycopg2.connect(database=DATABASE_NAME,
                         host=DATABASE_HOST,
@@ -73,6 +74,46 @@ def gen_prof_id():
         return 3000
     else:
         return output[0] + 1
+
+
+## Login back-end
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        # Add your authentication logic here
+        # For example, check credentials against a database or any other authentication method
+
+        # For demonstration purposes, let's check if the username is "admin" and password is "password"
+        if username == "admin" and password == "password":
+            # For simplicity, redirect to the student management page on successful login
+            return redirect(url_for('index'))
+
+        # If authentication fails, you can render an error message or redirect to the login page
+        flash('Invalid username or password', 'error')
+
+    return render_template('login.html')
+
+
+@app.route('/create_user', methods=['GET', 'POST'])
+def create_user():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        secret_code = request.form['secret_code']
+
+        if secret_code == "cse412":
+            # Save the admin user (replace this with your actual logic)
+            # For example, you might save it to a database
+            # Ensure you have a secure method for storing passwords (hashing)
+            flash('Admin user created successfully!', 'success')
+            return redirect(url_for('login'))
+        else:
+            flash('Invalid secret code. Admin user not created.', 'danger')
+
+    return render_template('create_user.html')
 
 
 ## Student back-end

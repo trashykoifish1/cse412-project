@@ -1,5 +1,4 @@
 <!-- templates/add_student.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,49 +13,56 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h2 class="mt-5 mb-3">Add New Student</h2>
-            <form method="post" action="{{ url_for('add_student') }}">
-                <div class="form-group">
-                    <label for="add_first_name">First Name</label>
-                    <input type="text" class="form-control" id="add_first_name" name="add_first_name" required>
+            <div class="card mt-5 mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">Add New Student</h2>
+                    <form method="post" action="{{ url_for('add_student') }}">
+                        <div class="form-group">
+                            <label for="add_first_name">First Name</label>
+                            <input type="text" class="form-control" id="add_first_name" name="add_first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_last_name">Last Name</label>
+                            <input type="text" class="form-control" id="add_last_name" name="add_last_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_phone_number">Phone Number</label>
+                            <input type="text" class="form-control" id="add_phone_number" name="add_phone_number"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_email">Email</label>
+                            <input type="text" class="form-control" id="add_email" name="add_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_address">Address</label>
+                            <input type="text" class="form-control" id="add_address" name="add_address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_gpa">GPA</label>
+                            <input type="number" step="0.01" class="form-control" id="add_gpa" name="add_gpa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_tuition">Tuition</label>
+                            <input type="text" class="form-control" id="add_tuition" name="add_tuition" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_enrollment_year">Enrollment Year</label>
+                            <input type="text" class="form-control" id="add_enrollment_year" name="add_enrollment_year"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_gender">Gender</label>
+                            <input type="text" class="form-control" id="add_gender" name="add_gender"
+                                   required>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Add Student</button>
+                            <a href="{{ url_for('index') }}" class="btn btn-secondary ml-2">Cancel</a>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="add_last_name">Last Name</label>
-                    <input type="text" class="form-control" id="add_last_name" name="add_last_name" required>
-                </div>
-                <div class="form-group">
-                    <label for="add_phone_number">Phone Number</label>
-                    <input type="text" class="form-control" id="add_phone_number" name="add_phone_number" required>
-                </div>
-                <div class="form-group">
-                    <label for="add_email">Email</label>
-                    <input type="text" class="form-control" id="add_email" name="add_email" required>
-                </div>
-                <div class="form-group">
-                    <label for="add_address">Address</label>
-                    <input type="text" class="form-control" id="add_address" name="add_address" required>
-                </div>
-                <div class="form-group">
-                    <label for="add_gpa">GPA</label>
-                    <input type="number" step="0.01" class="form-control" id="add_gpa" name="add_gpa" required>
-                </div>
-                <div class="form-group">
-                    <label for="add_tuition">Tuition</label>
-                    <input type="text" class="form-control" id="add_tuition" name="add_tuition" required>
-                </div>
-                <div class="form-group">
-                    <label for="add_enrollment_year">Enrollment Year</label>
-                    <input type="text" class="form-control" id="add_enrollment_year" name="add_enrollment_year"
-                           required>
-                </div>
-                <div class="form-group">
-                    <label for="add_gender">Gender</label>
-                    <input type="text" class="form-control" id="add_gender" name="add_gender"
-                           required>
-                </div>
-                <button type="submit" class="btn btn-success">Add Student</button>
-                <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
-            </form>
+            </div>
         </div>
     </div>
 </div>
