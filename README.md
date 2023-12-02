@@ -29,7 +29,7 @@ CREATE ROLE cse412 WITH
 ```
 CREATE DATABASE "cse412-project"
     WITH
-    OWNER = khoi
+    OWNER = cse412
     ENCODING = 'UTF8'
     LOCALE_PROVIDER = 'libc'
     CONNECTION LIMIT = -1
