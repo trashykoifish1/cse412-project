@@ -36,8 +36,8 @@ CREATE DATABASE "cse412-project"
     IS_TEMPLATE = False;
 ```
 > Using database_dump.sql
-- [pgAdmin4](https://www.pgadmin.org/docs/pgadmin4/development/restore_dialog.html)
-- [psql](https://www.postgresql.org/docs/8.0/backup.html)
+> - [pgAdmin4](https://www.pgadmin.org/docs/pgadmin4/development/restore_dialog.html)
+> - [psql](https://www.postgresql.org/docs/8.0/backup.html)
 
 - Navigate to your `cse412-project` database and run the following commands
 ```
