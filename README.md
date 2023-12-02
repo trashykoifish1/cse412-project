@@ -193,8 +193,9 @@ $ pip install -r requirements.txt
 
 - Run the app
 ```
-$ flask --app main run
+$ python main.py
 ```
-![image](https://github.com/trashykoifish1/cse412-project/assets/112349723/6a870acb-e25b-4375-86ca-f107831d4d10)
+![image](https://github.com/trashykoifish1/cse412-project/assets/112349723/1e501968-324f-442b-a155-85626f625e35)
+
 - Navigate to http://127.0.0.1:5000/ to start using the web application
 
