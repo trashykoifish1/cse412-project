@@ -13,7 +13,6 @@ $ git clone https://github.com/trashykoifish1/cse412-project
 - Or download the [zip](https://github.com/trashykoifish1/cse412-project/archive/refs/heads/main.zip)
 
 ### Initializing Database
-- Create a new database with the name `cse412-project`
 - Create an admin role in your database with the username `cse412` and password `1234`
 ```
 CREATE ROLE cse412 WITH
@@ -26,6 +25,20 @@ CREATE ROLE cse412 WITH
 	CONNECTION LIMIT -1
 	PASSWORD '1234';
 ```
+- Create a new database with the name `cse412-project`
+```
+CREATE DATABASE "cse412-project"
+    WITH
+    OWNER = khoi
+    ENCODING = 'UTF8'
+    LOCALE_PROVIDER = 'libc'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+```
+> Using database_dump.sql
+- [pgAdmin4](https://www.pgadmin.org/docs/pgadmin4/development/restore_dialog.html)
+- [psql](https://www.postgresql.org/docs/8.0/backup.html)
+
 - Navigate to your `cse412-project` database and run the following commands
 ```
 ------- Entity Sets -------
@@ -140,9 +153,7 @@ dept_id INTEGER NOT NULL REFERENCES department(dept_id) ON DELETE CASCADE,
 PRIMARY KEY (uni_id, dept_id)
 );
 ```
-### Using database_dump.sql
-- [pgAdmin4](https://www.pgadmin.org/docs/pgadmin4/development/restore_dialog.html)
-- [psql](https://www.postgresql.org/docs/8.0/backup.html)
+
 
 ### Using PyCharm
 - Download [PyCharm Community Edition](https://www.jetbrains.com/pycharm/download/?section=windows)
