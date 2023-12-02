@@ -1,5 +1,8 @@
 # Student Management Web App
 > This is a CRUD system for managing students, professors, courses and departments of a university (ASU).
+
+## User Guide
+- Refer to [USERMANUAL.md](USERMANUAL.md)
 ## Installation
 - Install [Python](https://www.python.org/downloads/)
 - Install [PostgreSQL](https://www.postgresql.org/download/)
@@ -167,5 +170,5 @@ $ pip install -r requirements.txt
 $ flask --app main run
 ```
 ![image](https://github.com/trashykoifish1/cse412-project/assets/112349723/6a870acb-e25b-4375-86ca-f107831d4d10)
-
+- Navigate to http://127.0.0.1:5000/ to start using the web application
 
