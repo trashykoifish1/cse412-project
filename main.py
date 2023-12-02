@@ -706,8 +706,10 @@ def assign_course():
 
     if request.method == 'POST':
         # Fetch form data
-        assign_course_id = request.form['assign_course_id']
-        assign_room_id = request.form['assign_room_id']
+        t = request.form['assign_course_id']
+        temp = t.split(",")
+        assign_course_id = temp[0]
+        assign_room_id = temp[1]
         assign_taught_by = int(request.form['assign_taught_by'])
         assign_uni_id = int(get_uni_id_for_prof(assign_taught_by))
 

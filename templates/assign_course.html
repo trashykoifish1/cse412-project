@@ -88,7 +88,7 @@
                             <label for="assign_course_id">Course</label>
                             <select class="form-control" id="assign_course_id" name="assign_course_id" required>
                                 {% for course in unassigned_courses %}
-                                <option value="{{ course.course_id }}">{{ course.course_id }} - {{ course.des }}
+                                <option value="{{ course.course_id }},{{ course.room_id }}">{{ course.course_id }} - {{ course.des }}
                                 </option>
                                 {% endfor %}
                             </select>
