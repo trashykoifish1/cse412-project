@@ -36,11 +36,13 @@ After successfully logged in, you can proceed with the main functionalities of t
 
 > To ```delete``` or ```edit``` a student, you can click the trash can icon or the pen icon respectively.
 
+---
 ### Managing Professor
 > Managing professor is similar to managing student, with identical functions for the ```Add New Professor``` button as well as the ```delete``` and ```edit``` functions.
 
 ![image](https://github.com/trashykoifish1/cse412-project/assets/112349723/f41added-aa6e-47a7-89a3-ce4c311ab529)
 
+---
 ### Managing Course
 > This is where you can manage all the courses offered, the ```Add New Course```, ```delete``` and ```edit``` functions are similar to the last two, additionally, there is a ```Assign Course``` function.
 
@@ -52,6 +54,7 @@ Upon deletion, a course would not be erased from the database, instead, it still
 
 Select an ```Unasigned Course``` and a ```Professor```, then click ```Assign Course```
 
+---
 ### Managing Department
 > This is where you can manage all the departments of the school, ```Add New Department```, ```delete```, ```edit``` and ```Assign Faculty``` work similarly to Managing Course.
 
@@ -67,6 +70,7 @@ This is where all the faculties of a certain department will be listed. You can 
 
 ![image](https://github.com/trashykoifish1/cse412-project/assets/112349723/800f9a2a-53e0-4b7e-8894-748a387753b5)
 
+---
 ### Logout
 In order to logout, you can click the ASU logo on the top left of the page
 
