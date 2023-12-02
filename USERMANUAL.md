@@ -13,6 +13,7 @@ Upon starup, the user will be greeted with a login page, if an account has alrea
 
 ### Create user
 ![image](https://github.com/trashykoifish1/cse412-project/assets/112349723/7ed9bc0b-608e-44e1-bc62-66977d8b8ab2)
+
 Enter your desired ```username``` and ```password``` along with the ```secret code``` provided to you. For the purpose of testing, you can enter ```cse412``` as the secret code. After a user has been succesfully created, proceed to ```login```.
 
 After successfully logged in, you can proceed with the main functionalities of the program.
