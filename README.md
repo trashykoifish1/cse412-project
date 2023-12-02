@@ -15,6 +15,17 @@ $ git clone https://github.com/trashykoifish1/cse412-project
 ### Initializing Database
 - Create a new database with the name `cse412-project`
 - Create an admin role in your database with the username `cse412` and password `1234`
+```
+CREATE ROLE cse412 WITH
+	LOGIN
+	SUPERUSER
+	CREATEDB
+	CREATEROLE
+	INHERIT
+	REPLICATION
+	CONNECTION LIMIT -1
+	PASSWORD '1234';
+```
 - Navigate to your `cse412-project` database and run the following commands
 ```
 ------- Entity Sets -------
