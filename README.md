@@ -129,6 +129,9 @@ dept_id INTEGER NOT NULL REFERENCES department(dept_id) ON DELETE CASCADE,
 PRIMARY KEY (uni_id, dept_id)
 );
 ```
+### Using database_dump.sql
+- [pgAdmin4](https://www.pgadmin.org/docs/pgadmin4/development/restore_dialog.html)
+- [psql](https://www.postgresql.org/docs/8.0/backup.html)
 
 ### Using PyCharm
 - Download [PyCharm Community Edition](https://www.jetbrains.com/pycharm/download/?section=windows)
