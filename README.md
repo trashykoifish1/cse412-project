@@ -39,6 +39,7 @@ CREATE DATABASE "cse412-project"
 > To use database_dump.sql instead:
 > - [pgAdmin4](https://www.pgadmin.org/docs/pgadmin4/development/restore_dialog.html)
 > - [psql](https://www.postgresql.org/docs/8.0/backup.html)
+> - Possible error using pgAdmin4: https://stackoverflow.com/questions/77462578/pgadmin-error-when-restoring-database-from-tar-file
 ---
 - Navigate to your `cse412-project` database and run the following commands
 ```
