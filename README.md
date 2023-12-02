@@ -35,10 +35,11 @@ CREATE DATABASE "cse412-project"
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 ```
-> Using database_dump.sql
+---
+> To use database_dump.sql instead:
 > - [pgAdmin4](https://www.pgadmin.org/docs/pgadmin4/development/restore_dialog.html)
 > - [psql](https://www.postgresql.org/docs/8.0/backup.html)
-
+---
 - Navigate to your `cse412-project` database and run the following commands
 ```
 ------- Entity Sets -------
