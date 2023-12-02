@@ -4,8 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Edit Professor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Edit Department</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet"
           href="{{ url_for('static', filename='plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css') }}">
@@ -75,7 +77,7 @@
         <div class="container-fluid">
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Edit Professor</h4>
+                    <h4 class="page-title">Edit Department</h4>
                 </div>
             </div>
             <!-- /.row -->
@@ -84,48 +86,27 @@
                 <div class="col-md-2 col-12"></div>
                 <div class="col-md-8 col-xs-12">
                     <div class="white-box">
-                        <form method="post">
+                        <form method="post" action="{{ url_for('edit_department', dept_id = department['dept_id']) }}">
                             <div class="form-group">
-                                <label for="first_name">First Name</label>
-                                <input type="text" class="form-control" id="first_name" name="first_name"
-                                       value="{{ professor.first_name }}" required>
+                                <label for="edit_des">Department Description</label>
+                                <input type="text" class="form-control form-control-line" id="edit_des" name="edit_des"
+                                       value="{{ department['des'] }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="last_name">Last Name</label>
-                                <input type="text" class="form-control" id="last_name" name="last_name"
-                                       value="{{ professor.last_name }}" required>
+                                <label for="edit_capacity">Capacity</label>
+                                <input type="number" class="form-control form-control-line" id="edit_capacity"
+                                       name="edit_capacity" value="{{ department['capacity'] }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone_number">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone_number" name="phone_number"
-                                       value="{{ professor.phone_number }}" required>
+                                <label for="edit_fund">Fund</label>
+                                <input type="text" class="form-control form-control-line" id="edit_fund"
+                                       name="edit_fund"
+                                       value="{{ department['fund'] }}" required>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                       value="{{ professor.email }}"
-                                       required>
-                            </div>
-                            <div class="form-group">
-                                <label for="addr">Address</label>
-                                <input type="text" class="form-control" id="addr" name="addr"
-                                       value="{{ professor.addr }}"
-                                       required>
-                            </div>
-                            <div class="form-group">
-                                <label for="salary">Salary</label>
-                                <input type="number" step="0.01" class="form-control" id="salary" name="salary"
-                                       value="{{ professor.salary }}" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="gender">Gender</label>
-                                <input type="text" class="form-control" id="gender" name="gender"
-                                       value="{{ professor.gender }}"
-                                       required>
-                            </div>
+                            <input type="hidden" name="dept_id" value="{{ department['dept_id'] }}">
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                                <a href="{{ url_for('manage_prof') }}" class="btn btn-secondary ml-2">Cancel</a>
+                                <a href="{{ url_for('manage_department') }}" class="btn btn-secondary ml-2">Cancel</a>
                             </div>
                         </form>
                     </div>

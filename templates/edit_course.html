@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Edit Course</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="{{ url_for('static', filename='css/colors/blue-dark.css') }}" id="theme" rel="stylesheet">
+</head>
+
+<body>
+<!-- Preloader -->
+<div class="preloader">
+    <div class="cssload-speeding-wheel"></div>
+</div>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top m-b-0">
+    <div class="navbar-header">
+        <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)"
+           data-toggle="collapse" data-target=".navbar-collapse">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="top-left-part">
+            <a class="logo" href="{{ url_for('index') }}">
+                <b>
+                    <img style="height:60px; width: 80px;margin-left: 30px;"
+                         src="{{ url_for('static', filename='plugins/images/2560px-ASU_Athletics_Logo.svg.png') }}"
+                         alt="home"/>
+                </b>
+            </a>
+        </div>
+    </div>
+    <!-- /.navbar-header -->
+    <!-- /.navbar-top-links -->
+    <!-- /.navbar-static-side -->
+</nav>
+<!-- Left navbar-header -->
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="{{ url_for('index') }}" class="waves-effect"><i class="fa fa-user fa-fw"
+                                                                         aria-hidden="true"></i><span
+                        class="hide-menu">Manage Students</span></a>
+            </li>
+            <li>
+                <a href="{{ url_for('manage_prof') }}" class="waves-effect"><i class="fa fa-modx fa-fw"
+                                                                               aria-hidden="true"></i><span
+                        class="hide-menu">Manage Professors</span></a>
+            </li>
+            <li>
+                <a href="{{ url_for('manage_course') }}" class="waves-effect"><i class="fa fa-book fa-fw"
+                                                                                 aria-hidden="true"></i><span
+                        class="hide-menu">Manage Courses</span></a>
+            </li>
+            <li>
+                    <a href="{{ url_for('manage_department') }}" class="waves-effect">
+                        <i class="fa fa-building fa-fw" aria-hidden="true"></i>
+                        <span class="hide-menu">Manage Departments</span>
+                    </a>
+                </li>
+        </ul>
+    </div>
+</div>
+<!-- Left navbar-header end -->
+<!-- Page Content -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Edit Course</h4>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-2 col-12"></div>
+            <div class="col-md-8 col-xs-12">
+                <div class="white-box">
+                    <form method="post"
+                          action="{{ url_for('edit_course', course_id=course.course_id, uni_id=course.uni_id) }}">
+                        <div class="form-group">
+                            <label for="edit_des">Course Description</label>
+                            <input type="text" class="form-control" id="edit_des" name="edit_des"
+                                   value="{{ course.des }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit_req">Requirement</label>
+                            <input type="number" class="form-control" id="edit_req" name="edit_req"
+                                   value="{{ course.req }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit_addr">Room Address</label>
+                            <input type="text" class="form-control" id="edit_addr" name="edit_addr"
+                                   value="{{ course.addr }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit_taught_by">Taught By</label>
+                            <select class="form-control" id="edit_taught_by" name="edit_taught_by" required>
+                                {% for professor in professors %}
+                                <option value="{{ professor.prof_id }}"
+                                        {% if professor.prof_id == course.prof_id %}
+                                        selected
+                                        {% endif %}>
+                                    {{ professor.first_name }} {{ professor.last_name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <a href="{{ url_for('manage_course') }}" class="btn btn-secondary ml-2">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2 col-12"></div>
+        </div>
+        <!-- /.row -->
+    </div>
+</div>
+<!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+<!-- jQuery -->
+<script src="{{ url_for('static', filename='plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ url_for('static', filename='bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="{{ url_for('static', filename='plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js') }}"></script>
+<!--slimscroll JavaScript -->
+<script src="{{ url_for('static', filename='js/jquery.slimscroll.js') }}"></script>
+<!--Wave Effects -->
+<script src="{{ url_for('static', filename='js/waves.js') }}"></script>
+<!-- Custom Theme JavaScript -->
+<script src="{{ url_for('static', filename='js/custom.min.js') }}"></script>
+</body>
+
+</html>

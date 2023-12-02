@@ -45,12 +45,12 @@
                                                                              aria-hidden="true"></i><span
                             class="hide-menu">Manage Students</span></a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="{{ url_for('manage_prof') }}" class="waves-effect"><i class="fa fa-modx fa-fw"
                                                                                    aria-hidden="true"></i><span
                             class="hide-menu">Manage Professors</span></a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="{{ url_for('manage_course') }}" class="waves-effect"><i class="fa fa-book fa-fw"
                                                                                      aria-hidden="true"></i><span
                             class="hide-menu">Manage Courses</span></a>
@@ -70,10 +70,11 @@
         <div class="container-fluid">
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Professor Management</h4>
+                    <h4 class="page-title">Course Management</h4>
                 </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12 text-right">
-                    <a href="{{ url_for('add_prof') }}" class="btn btn-success">Add New Professor</a>
+                    <a href="{{ url_for('add_course') }}" class="btn btn-success">Add New Course</a>
+                    <a href="{{ url_for('assign_course') }}" class="btn btn-success">Assign Course</a>
                 </div>
             </div>
             <div class="row">
@@ -83,32 +84,31 @@
                             <table class="table" id="example">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>First</th>
-                                    <th>Last</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th>Address</th>
-                                    <th>Salary</th>
+                                    <th>Course ID</th>
+                                    <th>Room ID</th>
+                                    <th>Description</th>
+                                    <th>Requirement</th>
+                                    <th>Course Address</th>
+                                    <th>Taught By</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for professor in professors %}
+                                {% for course in courses %}
                                 <tr>
-                                    <td>{{ professor.prof_id }}</td>
-                                    <td>{{ professor.first_name }}</td>
-                                    <td>{{ professor.last_name }}</td>
-                                    <td>{{ professor.phone_number }}</td>
-                                    <td>{{ professor.email }}</td>
-                                    <td>{{ professor.addr }}</td>
-                                    <td>${{ professor.salary }}</td>
+                                    <td>{{ course.course_id }}</td>
+                                    <td>{{ course.room_id }}</td>
+                                    <td>{{ course.des }}</td>
+                                    <td>{{ course.req }}</td>
+                                    <td>{{ course.addr }}</td>
+                                    <td>{{ course.professor.first_name }} {{ course.professor.last_name }}
+                                    </td>
                                     <td>
-                                        <a href="{{ url_for('edit_prof', prof_id=professor.prof_id) }}"
+                                        <a href="{{ url_for('edit_course', course_id=course.course_id, uni_id=course.professor.uni_id) }}"
                                            class="btn btn-sm btn-primary" data-toggle="modal"><i
                                                 class="material-icons" data-toggle="tooltip"
                                                 title="Edit">&#xE254;</i></a>
-                                        <a href="{{ url_for('delete_prof', prof_id=professor.prof_id) }}"
+                                        <a href="{{ url_for('delete_course', course_id=course.course_id, uni_id=course.professor.uni_id) }}"
                                            class="btn btn-sm btn-danger" data-toggle="modal"><i
                                                 class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                     </td>
@@ -124,7 +124,7 @@
     </div>
 </div>
 
-<!-- Add your modals for adding, editing, and deleting professors -->
+<!-- Add your modals for adding, editing, and deleting courses -->
 
 <!-- jQuery -->
 <script src="../static/plugins/bower_components/jquery/dist/jquery.min.js"></script>
