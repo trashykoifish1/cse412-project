@@ -1,10 +1,10 @@
 # User Manual
-## Requirement:
+## Requirement
 Assuming the user has already installed:
 - [PostgreSQL](https://www.postgresql.org/)
 - [Python](https://www.python.org/)
 - For a detailed installation guide, refer to [README.md](README.md)
-## Manual:
+## Manual
 ### Login page
 
 ![image](https://github.com/trashykoifish1/cse412-project/assets/112349723/59c13b1f-e9f9-4ca6-8173-dc28791922f1)
